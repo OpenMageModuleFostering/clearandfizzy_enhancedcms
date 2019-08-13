@@ -1,9 +1,9 @@
 {
     "name": "OpenMageModuleFostering/Clearandfizzy_EnhancedCMS",
     "type": "magento-module",
-    "license": "AFL-3.0",
+    "license": "Clearandfizzy-Licence",
     "homepage": "",
-    "description": "Enhanced CMS - Sync, backup / import CMS Static Blocks & Pages.",
+    "description": "Enhanced CMS - Static block importer / Exporter",
     "authors": [
     {
         "name": "Gareth Price",

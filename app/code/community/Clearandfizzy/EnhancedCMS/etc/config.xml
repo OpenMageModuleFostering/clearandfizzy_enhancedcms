@@ -5,15 +5,29 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
  *
- * @category    Clearandfizzy
+ * THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
+ * COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
+ * COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+ * AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+
+ * BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE
+ * TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY
+ * BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
+ * CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
+ * CONDITIONS.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * versions in the future. If you wish to customize this extension for your
+ * needs please refer to http://www.clearandfizzy.com for more information.
+ *
+ * @category    Community
  * @package     Clearandfizzy_EnhancedCMS
- * @copyright   Copyright (c) 2012 Clearandfizzy ltd. (http://www.clearandfizzy.com/)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @copyright   Copyright (c) 2015 Clearandfizzy Ltd. (http://www.clearandfizzy.com)
+ * @license     http://www.clearandfizzy.com/licence.txt
+ * @author		Gareth Price <gareth@clearandfizzy.com>
  * @description This file configures the Clearandfizzy tab and any default menus in the magento admin
  */
 -->
@@ -21,7 +35,7 @@
  
 	<modules>
 		<Clearandfizzy_EnhancedCMS>
-			<version>1.0.0</version>
+			<version>1.2.0</version>
 		</Clearandfizzy_EnhancedCMS>
 	</modules>
  
@@ -66,7 +80,18 @@
 					<file>clearandfizzy/enhancedcms/enhancedcms.xml</file>	
 				</clearandfizzy_enhancedcms>
 			</updates>
-		</layout>     
+		</layout>  
+		
+		<events>
+            <controller_action_predispatch>
+                <observers>
+                    <clearandfizzy_enhancedcms_feed>
+                        <class>clearandfizzy_enhancedcms/observer_notification_feed</class>
+                        <method>preDispatch</method>
+                    </clearandfizzy_enhancedcms_feed>
+                </observers>
+            </controller_action_predispatch>
+        </events>   		   
 
      </adminhtml>       
 
@@ -82,5 +107,14 @@
 		</routers>
 
 	</admin>
+
+	<default>
+		<clearandfizzy_enhancedcms_settings>
+			<adminnotification>
+		    	<feed_url>magento.clearandfizzy.com/community/enhancedcms-free.xml</feed_url>
+		        <frequency>1</frequency>
+			</adminnotification>
+		</clearandfizzy_enhancedcms_settings>
+	</default>
 	 
 </config>

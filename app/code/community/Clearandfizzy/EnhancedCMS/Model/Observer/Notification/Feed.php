@@ -24,18 +24,17 @@
  *
  * @category    Community
  * @package     Clearandfizzy_EnhancedCMS
- * @copyright   Copyright (c) 2015 Clearandfizzy Ltd. (http://www.clearandfizzy.com)
- * @license     http://www.clearandfizzy.com/licence.txt
+ * @copyright   Copyright (c) 2015 Clearandfizzy ltd. (http://www.clearandfizzy.com)
+ * @license     http://www.clearandfizzy.com/license.txt
  * @author		Gareth Price <gareth@clearandfizzy.com>
  * 
  */
+class Clearandfizzy_EnhancedCMS_Model_Observer_Notification_Feed {
+	
+	public function preDispatch() {
+		$model  = Mage::getModel('clearandfizzy_enhancedcms/notification_feed');
+        
+        $model->checkUpdate();		
+	} // end 	
 
-class Clearandfizzy_EnhancedCMS_Model_Import_Page_Csv extends Clearandfizzy_EnhancedCMS_Model_Import_Abstract_Csv {
-
-	private $array_delimiter = ';';
-	private $delimiter = ',';
-	private $header_columns;
-
-	protected $_modelname = 'cms/page';
-
-}
+} // end 
