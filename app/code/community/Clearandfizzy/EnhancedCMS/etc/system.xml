@@ -62,13 +62,20 @@
 					<show_in_default>1</show_in_default>
 					<show_in_website>1</show_in_website>
 					<show_in_store>1</show_in_store>
-					<comment><![CDATA[ <ol>
-					<li>Extends the CMS > Static Blocks Admin screen. </li>
-					<li>Adds the ability to migrate static blocks between environments by importing and exporting CSV files.</li></ol> ]]></comment>		
+                    <comment><![CDATA[<ol>
+                        <li><h3>About</h3></li>
+                        <li>Adds export & import buttons to Magento's CMS Pages and CMS blocks in .CSV format.</li>
+                        <li>Migrate Magento CMS Pages /  Blocks between server environments via CSV.</li>
+                        <li>&nbsp;</li>
+                        <li><h3>Support</h3></li>
+                        <li>The Magento Connect extension page can be found here <a target="_blank" style="color: blue;" href="http://www.magentocommerce.com/magento-connect/enhanced-cms-pages-static-block-importer.html">http://www.magentocommerce.com/magento-connect/enhanced-cms-pages-static-block-importer.html</a></li>                      
+						<li>More Extensions: <a target="_blank" style="color: blue;" href="http://www.magentocommerce.com/magento-connect/developer/Gareth+Price#developer-view:extensions">http://www.magentocommerce.com/magento-connect/developer/Gareth+Price#developer-view:extensions</a>
+                    </ol>]]></comment>
 					<expanded>1</expanded>
 				</enhancedcms_about>
-
-	       </groups>                           
+	       
+	       </groups>                        
+	          
         </clearandfizzy_enhancedcms_settings>
     </sections>
  

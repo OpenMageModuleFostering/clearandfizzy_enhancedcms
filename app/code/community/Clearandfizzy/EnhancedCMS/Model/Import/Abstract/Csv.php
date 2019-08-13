@@ -109,17 +109,37 @@ class Clearandfizzy_EnhancedCMS_Model_Import_Abstract_Csv extends Mage_Core_Mode
 					$staticblock->save();
 					Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('cms')->__('Updated ' . $identifier));
 				} catch (Exception $e) {
-					Mage::throwException($e->getMessage() . ' URL Key = ' . $data[$this->getIdentifierColumnIndex()]);
+					Mage::throwException($e->getMessage() . 'ID = ' . $data[$this->getIdentifierColumnIndex()]
+							);
 				}
 			} // end while
 		}// end if
 
 	} // end
 
+	/**
+	 * 
+	 * @param unknown $data_array
+	 */
 	private function mapHeader($data_array) {
 		$this->header_columns = $data_array;
 	}
+	
+	/**
+	 * 
+	 * @param unknown $name
+	 * @return mixed
+	 */
+	private function getIndexByName($name) {
+		$header = $this->header_columns;
+		$index = array_search($name, $header);
+		return $index;
+	}
 
+	/**
+	 * 
+	 * @return mixed
+	 */
 	private function getIdentifierColumnIndex() {
 		$header = $this->header_columns;
 		$index = array_search('Identifier', $header);
