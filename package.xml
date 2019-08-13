@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+    <name>Clearandfizzy_EnhancedCMS</name>
+    <version>1.1.2</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/afl-3.0.php">AFL 3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Enhanced CMS - Sync, backup / import CMS Static Blocks &amp; Pages.</summary>
+    <description>Allows you to export / import CMS Static blocks &amp; CMS Pages via CSV files. &#xD;
+&#xD;
+Backup or migrate your CMS Static Blocks &amp; Pages between environments with ease.&#xD;
+</description>
+    <notes>Did we add new features?&#xD;
+Yes&#xD;
+&#xD;
+Did you fix a bunch of Bugs?&#xD;
+No&#xD;
+&#xD;
+Well then, what in funkytown did you do?&#xD;
+Added Import / Export for CMS Pages</notes>
+    <authors><author><name>Gareth Price</name><user>clearandfizzy</user><email>gareth@clearandfizzy.com</email></author></authors>
+    <date>2013-03-03</date>
+    <time>02:35:30</time>
+    <contents><target name="magecommunity"><dir name="Clearandfizzy"><dir name="EnhancedCMS"><dir name="Block"><dir name="Adminhtml"><dir name="Cms"><dir name="Block"><file name="Grid.php" hash="6c36dbd00ee095a76c2c17947ff1e329"/></dir><file name="Block.php" hash="8b67ff8b92f82426f205dfaa0a448a26"/><dir name="Enhanced"><dir name="Abstract"><file name="Grid.php" hash="00568d410448903f96e3c42d7e40c8b6"/><dir name="Upload"><file name="Form.php" hash="48564398e763f135b575215ed2143d9b"/></dir><file name="Upload.php" hash="4a0a07b26019f11d03fba51222f587ab"/></dir><dir name="Block"><file name="Grid.php" hash="3efeb671ba8418cbc9af856971ed05b6"/><dir name="Upload"><file name="Form.php" hash="08c630cff255ca83d688eabc03cbf530"/></dir><file name="Upload.php" hash="6803294c5e4a90173d9ef2ef347764b9"/></dir><dir name="Page"><file name="Grid.php" hash="f24858c2116306122f5449e9d1385dfc"/><dir name="Upload"><file name="Form.php" hash="fcf9cea95c89a1116cf042fa36a5f435"/></dir><file name="Upload.php" hash="123a728c7d413275763575e634f86a43"/></dir></dir><dir name="Page"><file name="Grid.php" hash="a0a853188c81f4da280cdf7192c6de9c"/></dir><file name="Page.php" hash="5cd281a694ee313cb04fef5fcc8d64c5"/></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="6b9e469292c8d6b3bc1da9795a79b9f9"/></dir><dir name="Model"><dir name="Import"><dir name="Abstract"><file name="Csv.php" hash="e25f48cfba8724c8fb00c3fd64f4a65e"/></dir><dir name="Block"><file name="Csv.php" hash="8becf0d08a86d367dbe1d78a4b5a564e"/></dir><file name="Block.php" hash="c55db8b03673098674611c6af81dc9cd"/><dir name="Page"><file name="Csv.php" hash="a8bdaeeb414726e4dfefc80fec3b289c"/></dir><file name="Page.php" hash="62d8add63c2530cfa89456fbd802c32a"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><dir name="Cms"><dir name="Enhanced"><file name="BlockController.php" hash="0ae65566d05f262a4bd75a4e3ff68724"/><file name="PageController.php" hash="1cd220607df14bd0bae1c2645ada0903"/></dir></dir></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="a425fa1870e61b022ba9e404fe7dcbdd"/><file name="config.xml" hash="893dc23e78a300313401b25d8440b9cc"/><file name="system.xml" hash="e6fd7190323f06f8f396ec2a1c09b0e8"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Clearandfizzy_EnhancedCMS.xml" hash="2f484679b7deba8d32509a76862b703c"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Clearandfizzy_EnhancedCMS",
+    "type": "magento-module",
+    "license": "AFL-3.0",
+    "homepage": "",
+    "description": "Enhanced CMS - Sync, backup / import CMS Static Blocks & Pages.",
+    "authors": [
+    {
+        "name": "Gareth Price",
+        "email": "gareth@clearandfizzy.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
