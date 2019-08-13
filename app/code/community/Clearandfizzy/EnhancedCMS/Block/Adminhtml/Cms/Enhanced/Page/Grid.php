@@ -158,9 +158,7 @@ class Clearandfizzy_EnhancedCMS_Block_Adminhtml_Cms_Enhanced_Page_Grid
 
 		// add the stores this block belongs to
 		foreach ($collection as $key => $page) {
-			$stores = $page->getResource()->lookupStoreIds($page->getPageId());
-			$stores = implode(';', $stores);
-			$page->setStores($stores);
+			$page->setStores(0);
 		} // end
 
 		/* @var $collection Mage_Cms_Model_Mysql4_Block_Collection */

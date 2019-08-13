@@ -71,7 +71,7 @@ class Clearandfizzy_EnhancedCMS_Adminhtml_Cms_Enhanced_BlockController extends M
 
 			} catch (Exception $e) {
 				Mage::logException($e);
-				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cms')->__('An Error occured importing CSV.'));
+				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cms')->__($e->getMessage()));
 			}
 		} // end
 

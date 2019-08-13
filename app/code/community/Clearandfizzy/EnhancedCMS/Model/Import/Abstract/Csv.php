@@ -69,26 +69,22 @@ class Clearandfizzy_EnhancedCMS_Model_Import_Abstract_Csv extends Mage_Core_Mode
 				// make sure we have a reset model object
 				//$staticblock = Mage::getSingleton($this->_modelname)->clearInstance();
 				$staticblock = Mage::getModel($this->_modelname);
-				
+
 				// get the identifier column for this row
 				$identifier = $data[$this->getIdentifierColumnIndex()];
-
+				
 				// if a static block already exists for this identifier - load the data
 				$staticblock->load($identifier);
-
+				
 				// loop through each column
 				foreach ($this->header_columns as $index => $keyname) {
+					
 					$keyname = strtolower($keyname);
-
+					
 					// switch statement incase we need to do logic depending on the column name
 					switch ($keyname) {
 
 						case "stores":
-							// stores are separated with ";" when they're exported
-							$stores = $data[$index];
-							$stores_array = explode(';', $stores);
-							$staticblock->setData($keyname, $stores_array);
-							$staticblock->setData('store_id', $stores_array);
 						break;
 
 						case "block_id":
@@ -103,15 +99,18 @@ class Clearandfizzy_EnhancedCMS_Model_Import_Abstract_Csv extends Mage_Core_Mode
 
 					} // end switch
 				} // end for
-
+				
 				// save our block
 				try {
 					$staticblock->save();
-					Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('cms')->__('Updated ' . $identifier));
+					Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('cms')->__('Updated Identifier ' . $identifier ) );
 				} catch (Exception $e) {
-					Mage::throwException($e->getMessage() . 'ID = ' . $data[$this->getIdentifierColumnIndex()]
+					Mage::throwException($e->getMessage() . ' - row (' . $row . ')' . $data[$this->getIndexByName('stores')] . 'Try specifying a valid ID'
 							);
 				}
+
+				// unset this object
+				unset($staticblock);
 			} // end while
 		}// end if
 
@@ -122,8 +121,10 @@ class Clearandfizzy_EnhancedCMS_Model_Import_Abstract_Csv extends Mage_Core_Mode
 	 * @param unknown $data_array
 	 */
 	private function mapHeader($data_array) {
+		$data_array = array_map('strtolower',$data_array);
 		$this->header_columns = $data_array;
-	}
+	} // end 
+	
 	
 	/**
 	 * 
@@ -131,8 +132,11 @@ class Clearandfizzy_EnhancedCMS_Model_Import_Abstract_Csv extends Mage_Core_Mode
 	 * @return mixed
 	 */
 	private function getIndexByName($name) {
+		
+		$name = strtolower($name);
 		$header = $this->header_columns;
 		$index = array_search($name, $header);
+
 		return $index;
 	}
 
@@ -141,9 +145,18 @@ class Clearandfizzy_EnhancedCMS_Model_Import_Abstract_Csv extends Mage_Core_Mode
 	 * @return mixed
 	 */
 	private function getIdentifierColumnIndex() {
-		$header = $this->header_columns;
-		$index = array_search('Identifier', $header);
+		
+		switch ($this->_modelname) {
+				
+			default:
+				$id_col = 'identifier';
+			break;
+			
+		} // end 
+		
+		$index = $this->getIndexByName($id_col);
+				
 		return $index;
-	}
+	} // end 
 
-}
+} //end class

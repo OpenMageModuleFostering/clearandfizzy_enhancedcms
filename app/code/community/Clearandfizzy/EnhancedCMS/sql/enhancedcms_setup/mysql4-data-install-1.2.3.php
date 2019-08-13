@@ -24,33 +24,14 @@
  *
  * @category    Community
  * @package     Clearandfizzy_EnhancedCMS
- * @copyright   Copyright (c) 2015 Clearandfizzy Ltd. (http://www.clearandfizzy.com)
- * @license     http://www.clearandfizzy.com/licence.txt
+ * @copyright   Copyright (c) 2015 Clearandfizzy ltd. (http://www.clearandfizzy.com)
+ * @license     http://www.clearandfizzy.com/license.txt
  * @author		Gareth Price <gareth@clearandfizzy.com>
  * 
  */
+$installer = $this;
+/* @var $installer Mage_Core_Model_Resource_Setup */
 
-class Clearandfizzy_EnhancedCMS_Helper_Data extends Mage_Core_Helper_Abstract {
-
-	/**
-	 * 
-	 */
-	public function getMarketPlaceUrl() {
-		$string = "https://www.magentocommerce.com/magento-connect/export-import-cms-pages-blocks.html";
-		return $string;
-	} // end 
-	
-	/**
-	 * 
-	 */
-	public function getImportPath() {
-		$path = Mage::getBaseDir('var') . DS . 'import' . DS . 'enhancedcms' . DS;
-
-		if (is_dir_writeable($path) != true) {
-			mkdir ($path, '0744', $recursive  = true );
-		} // end
-
-		return $path;
-	}
-
-}
+$installer->startSetup();
+$installer->feed();
+$installer->endSetup();

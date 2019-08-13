@@ -10,6 +10,22 @@
 class Clearandfizzy_EnhancedCMS_Block_Adminhtml_Cms_Block_Grid extends Mage_Adminhtml_Block_Cms_Block_Grid {
 
 
+	protected function _prepareLayout() {
+		parent::_prepareLayout();
+	
+		$this->setChild('export_button_extra',
+				$this->getLayout()->createBlock('core/text')
+				->setText('&nbsp;<a target="_blank" href="https://www.magentocommerce.com/magento-connect/catalog/product/view/id/31286/EnhancedCMS-PRO.html">Need Multistore Imports / Exports?</a>')
+				);
+	
+	} // end
+		
+	public function getExportButtonHtml()
+	{
+		return $this->getChildHtml('export_button') . $this->getChildHtml('export_button_extra');
+	}
+	
+	
 	protected function _prepareColumns() {
 		parent::_prepareColumns();
 

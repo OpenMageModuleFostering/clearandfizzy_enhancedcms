@@ -10,6 +10,8 @@ class Clearandfizzy_EnhancedCMS_Block_Adminhtml_Cms_Enhanced_Page_Upload_Form ex
 
 	protected function _prepareForm() {
 
+		$url = Mage::helper('clearandfizzy_enhancedcms')->getMarketPlaceUrl();
+		
 		$form = new Varien_Data_Form(array(
 				'id' => 'upload_form',
 				'action' => $this->getUrl('*/cms_enhanced_page/importCsv'),
@@ -20,6 +22,11 @@ class Clearandfizzy_EnhancedCMS_Block_Adminhtml_Cms_Enhanced_Page_Upload_Form ex
 
 		$fieldset = $form->addFieldset('upload_csv', array('legend' => Mage::helper('clearandfizzy_enhancedcms')->__('Upload CSV')));
 
+		$fieldset->addField('note', 'note', array(
+				'text'     => Mage::helper('clearandfizzy_enhancedcms')->__('For multi store functionality - <a href="'.$url.'" target="_blank" style="color:blue;">'.$url.'</a> '),
+				'html_id'  => 'about',
+		));
+		
 		$fieldset->addField('importfile', 'file', array(
 				'label'     => Mage::helper('clearandfizzy_enhancedcms')->__('Upload CSV File'),
 				'required'  => true,

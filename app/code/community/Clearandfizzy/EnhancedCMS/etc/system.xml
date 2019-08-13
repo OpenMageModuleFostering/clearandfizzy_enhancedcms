@@ -67,12 +67,48 @@
                         <li>Adds export & import buttons to Magento's CMS Pages and CMS blocks in .CSV format.</li>
                         <li>Migrate Magento CMS Pages /  Blocks between server environments via CSV.</li>
                         <li>&nbsp;</li>
+                        <li><h3>Need Multistore Imports?</h3></li>
+						<li>For multiple store functionality visit - <a target="_blank" style="color: blue;" href="https://www.magentocommerce.com/magento-connect/catalog/product/view/id/31286/EnhancedCMS-PRO.html">https://www.magentocommerce.com/magento-connect/catalog/product/view/id/31286/EnhancedCMS-PRO.html</a></li>
+				        <li>&nbsp;</li>
+                        <li><h3>Feedback</h3></li>
+						<li>I'm collecting feedback on what you and others think of the extension and how it can be improved.</li>
+						<li>The Survey is 5 questions and will take less than a minute, if you could spare the time. <a style="color: blue;" href="http://goo.gl/forms/SeFn9BSejX" target="_blank">Click here</a></li>
+                        <li>&nbsp;</li>
                         <li><h3>Support</h3></li>
-                        <li>The Magento Connect extension page can be found here <a target="_blank" style="color: blue;" href="http://www.magentocommerce.com/magento-connect/enhanced-cms-pages-static-block-importer.html">http://www.magentocommerce.com/magento-connect/enhanced-cms-pages-static-block-importer.html</a></li>                      
+                        <li>The Enhanced CMS extension page can be found here <a target="_blank" style="color: blue;" href="http://www.magentocommerce.com/magento-connect/enhanced-cms-pages-static-block-importer.html">http://www.magentocommerce.com/magento-connect/enhanced-cms-pages-static-block-importer.html</a></li>                      
 						<li>More Extensions: <a target="_blank" style="color: blue;" href="http://www.magentocommerce.com/magento-connect/developer/Gareth+Price#developer-view:extensions">http://www.magentocommerce.com/magento-connect/developer/Gareth+Price#developer-view:extensions</a>
                     </ol>]]></comment>
 					<expanded>1</expanded>
 				</enhancedcms_about>
+				
+				<enhancedcms>
+					<label>Enhanced CMS Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>   
+					<expanded>1</expanded>
+
+					<fields>
+				        <delimiter>
+							<label>Field Delimiter</label>
+							<frontend_type>text</frontend_type>
+				            <comment>
+				               <![CDATA[<a target="_blank" style="color: blue;"href="https://www.magentocommerce.com/magento-connect/catalog/product/view/id/31286/EnhancedCMS-PRO.html">Upgrade to the PRO version</a><br />
+				            The delimiter used between fields. Default is a comma ','. 
+
+								Form.Element.disable('');
+							</script>
+				               ]]>
+				            </comment>
+				            <sort_order>10</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </delimiter>
+			    	</fields>    
+				</enhancedcms>
 	       
 	       </groups>                        
 	          

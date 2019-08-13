@@ -35,7 +35,7 @@
  
 	<modules>
 		<Clearandfizzy_EnhancedCMS>
-			<version>1.2.0</version>
+			<version>2.0.0</version>
 		</Clearandfizzy_EnhancedCMS>
 	</modules>
  
@@ -69,6 +69,26 @@
                 <class>Clearandfizzy_EnhancedCMS_Model</class>
              </clearandfizzy_enhancedcms>
 		</models>
+		
+        <resources>
+            <clearandfizzy_enhancedcms>
+                <setup>
+                    <module>Clearandfizzy_EnhancedCMS</module>
+                    <class>Clearandfizzy_EnhancedCMS_Model_Resource_Setup</class>
+                </setup>
+            </clearandfizzy_enhancedcms>
+        </resources>	
+        
+		<events>
+            <controller_action_predispatch>
+                <observers>
+                    <clearandfizzy_enhancedcms_feed>
+                        <class>clearandfizzy_enhancedcms/observer_notification_feed</class>
+                        <method>preDispatch</method>
+                    </clearandfizzy_enhancedcms_feed>
+                </observers>
+            </controller_action_predispatch>
+        </events>   		   
 
      </global> 
      
@@ -81,17 +101,6 @@
 				</clearandfizzy_enhancedcms>
 			</updates>
 		</layout>  
-		
-		<events>
-            <controller_action_predispatch>
-                <observers>
-                    <clearandfizzy_enhancedcms_feed>
-                        <class>clearandfizzy_enhancedcms/observer_notification_feed</class>
-                        <method>preDispatch</method>
-                    </clearandfizzy_enhancedcms_feed>
-                </observers>
-            </controller_action_predispatch>
-        </events>   		   
 
      </adminhtml>       
 
@@ -112,8 +121,12 @@
 		<clearandfizzy_enhancedcms_settings>
 			<adminnotification>
 		    	<feed_url>magento.clearandfizzy.com/community/enhancedcms-free.xml</feed_url>
-		        <frequency>1</frequency>
+		        <frequency>6</frequency>
 			</adminnotification>
+			<enhancedcms>
+				<delimiter>,</delimiter>
+			</enhancedcms>
+			
 		</clearandfizzy_enhancedcms_settings>
 	</default>
 	 
